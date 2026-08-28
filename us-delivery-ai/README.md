@@ -1,10 +1,9 @@
-# US Delivery Internship — Task Round Submission
+# TRI_Agent
 
 Production-grade AI tooling for Technical Support & TAM teams: an intelligent
 ticket triage agent, a TAM account health summariser, and an evaluation harness
 for both.
 
-**Time spent:** ~4 hours (in line with the stated timebox).
 
 ## Setup
 
