@@ -1,0 +1,568 @@
+{
+  "generated_at": "2026-08-27T09:20:59.518783+00:00",
+  "using_real_llm": false,
+  "total_cases": 12,
+  "passed": 11,
+  "failed": 1,
+  "pass_rate": 0.917,
+  "task1_pass_rate": 0.833,
+  "task2_pass_rate": 1.0,
+  "task1_results": [
+    {
+      "case_id": "t1_case_1_clear_p1_bug",
+      "note": "",
+      "score": 1.0,
+      "pass": true,
+      "checks": [
+        {
+          "check": {
+            "field": "urgency",
+            "op": "in",
+            "value": [
+              "P1",
+              "P2"
+            ]
+          },
+          "passed": true
+        },
+        {
+          "check": {
+            "field": "category",
+            "op": "==",
+            "value": "Bug"
+          },
+          "passed": true
+        },
+        {
+          "check": {
+            "field": "matched_kb_docs",
+            "op": "min_len",
+            "value": 1
+          },
+          "passed": true
+        }
+      ],
+      "output": {
+        "ticket_id": "TEST-1",
+        "product_area": "Production DataBridge Pro pipeline down, 200 users affected",
+        "category": "Bug",
+        "urgency": "P1",
+        "urgency_reasoning": "[offline mock] keyword heuristic matched on seed 68329869",
+        "matched_kb_docs": [
+          {
+            "doc_path": "products/databridge-pro.md",
+            "section": "Common Support Scenarios",
+            "snippet": "## Common Support Scenarios\n\n### Pipeline stopped processing\n\n1. Check Pipeline Monitoring dashboard for last heartbeat.\n2. Review error logs under Monitoring \u2192 Logs \u2192 filter by pipeline ID.\n3. Check if source credentials have expired (common after 90 days).\n4. Restart the pipeline from the UI: Pipe",
+            "relevance_score": 0.156
+          },
+          {
+            "doc_path": "products/databridge-pro.md",
+            "section": "DataBridge Pro \u2014 Product Reference",
+            "snippet": "# DataBridge Pro \u2014 Product Reference",
+            "relevance_score": 0.155
+          },
+          {
+            "doc_path": "troubleshooting/performance-and-integrations.md",
+            "section": "Error Reference",
+            "snippet": "## Error Reference\n\n| Error | Likely Cause | Resolution |\n|-------|-------------|------------|\n| `ERR_CONNECTION_TIMEOUT after 30s` | Network or source unreachable | Check firewall, VPN, and source availability |\n| `PIPELINE_STALLED: no heartbeat for 15 minutes` | Pipeline worker crashed or source b",
+            "relevance_score": 0.098
+          }
+        ],
+        "recommended_team": "Tier-2 Engineering",
+        "draft_response": "Hi, thanks for reaching out about \"Production DataBridge Pro pipeline down, 200 users affected\". We've logged this as a Bug issue and are looking into it.",
+        "confidence": 0.55,
+        "low_confidence_flag": true
+      }
+    },
+    {
+      "case_id": "t1_case_2_billing_question",
+      "note": "",
+      "score": 1.0,
+      "pass": true,
+      "checks": [
+        {
+          "check": {
+            "field": "category",
+            "op": "==",
+            "value": "Billing"
+          },
+          "passed": true
+        },
+        {
+          "check": {
+            "field": "recommended_team",
+            "op": "==",
+            "value": "Billing Support"
+          },
+          "passed": true
+        }
+      ],
+      "output": {
+        "ticket_id": "TEST-2",
+        "product_area": "Why are we being charged for more seats than active users?",
+        "category": "Billing",
+        "urgency": "P1",
+        "urgency_reasoning": "[offline mock] keyword heuristic matched on seed 31144960",
+        "matched_kb_docs": [
+          {
+            "doc_path": "billing/billing-and-plans.md",
+            "section": "How Seat Billing Works",
+            "snippet": "## How Seat Billing Works\n\nA **seat** is any user account that was active (logged in or made an API call) at least once during the billing period.\n\n- Seats are counted at the end of each billing month.\n- Adding users mid-month is prorated to the day.\n- Deactivating a user does **not** immediately fr",
+            "relevance_score": 0.377
+          },
+          {
+            "doc_path": "products/securevault.md",
+            "section": "Common Support Scenarios",
+            "snippet": "## Common Support Scenarios\n\n### Users cannot log in after SSO migration\n\n1. Verify ACS URL and Entity ID are correct in the IDP.\n2. Check for clock skew: `SAML_ASSERTION_EXPIRED` in audit logs.\n3. Confirm group mappings exist for all IDP groups users belong to.\n4. Temporarily allow password login f",
+            "relevance_score": 0.084
+          },
+          {
+            "doc_path": "onboarding/onboarding-guide.md",
+            "section": "Onboarding Guide \u2014 New Customers & Users",
+            "snippet": "# Onboarding Guide \u2014 New Customers & Users",
+            "relevance_score": 0.065
+          }
+        ],
+        "recommended_team": "Billing Support",
+        "draft_response": "Hi, thanks for reaching out about \"Why are we being charged for more seats than active users?\". We've logged this as a Billing issue and are looking into it.",
+        "confidence": 0.55,
+        "low_confidence_flag": true
+      }
+    },
+    {
+      "case_id": "t1_case_3_feature_request_low_urgency",
+      "note": "",
+      "score": 0.0,
+      "pass": false,
+      "checks": [
+        {
+          "check": {
+            "field": "urgency",
+            "op": "in",
+            "value": [
+              "P3",
+              "P4"
+            ]
+          },
+          "passed": false
+        }
+      ],
+      "output": {
+        "ticket_id": "TEST-3",
+        "product_area": "Feature request: bulk export from AnalyticsHub",
+        "category": "Bug",
+        "urgency": "P1",
+        "urgency_reasoning": "[offline mock] keyword heuristic matched on seed 83638805",
+        "matched_kb_docs": [
+          {
+            "doc_path": "products/analyticshub.md",
+            "section": "AnalyticsHub \u2014 Product Reference",
+            "snippet": "# AnalyticsHub \u2014 Product Reference",
+            "relevance_score": 0.095
+          },
+          {
+            "doc_path": "products/analyticshub.md",
+            "section": "Pricing & Limits by Plan",
+            "snippet": "## Pricing & Limits by Plan\n\n| Feature | Starter | Professional | Business | Enterprise |\n|---------|---------|--------------|----------|------------|\n| Dashboards | 5 | 50 | 500 | Unlimited |\n| Scheduled reports | 2 | 20 | 100 | Unlimited |\n| Export row limit | 1,000 | 100,000 | 1,000,000 | Unlimit",
+            "relevance_score": 0.085
+          },
+          {
+            "doc_path": "products/cloudsync.md",
+            "section": "Common Support Scenarios",
+            "snippet": "## Common Support Scenarios\n\n### Sync has stopped / files not updating\n\n1. Check the sync job status at Settings \u2192 Sync Jobs. Look for `STALLED` or `ERROR` state.\n2. Inspect the job log \u2014 most common causes:\n   - Expired credentials for the destination storage provider\n   - File above `max_file_size",
+            "relevance_score": 0.084
+          }
+        ],
+        "recommended_team": "Tier-2 Engineering",
+        "draft_response": "Hi, thanks for reaching out about \"Feature request: bulk export from AnalyticsHub\". We've logged this as a Bug issue and are looking into it.",
+        "confidence": 0.55,
+        "low_confidence_flag": true
+      }
+    },
+    {
+      "case_id": "t1_case_4_sso_integration_issue",
+      "note": "",
+      "score": 1.0,
+      "pass": true,
+      "checks": [
+        {
+          "check": {
+            "field": "matched_kb_docs",
+            "op": "min_len",
+            "value": 1
+          },
+          "passed": true
+        },
+        {
+          "check": {
+            "field": "category",
+            "op": "in",
+            "value": [
+              "Integration",
+              "Bug",
+              "Onboarding"
+            ]
+          },
+          "passed": true
+        }
+      ],
+      "output": {
+        "ticket_id": "TEST-4",
+        "product_area": "New employees can't log in via Okta SSO",
+        "category": "Bug",
+        "urgency": "P1",
+        "urgency_reasoning": "[offline mock] keyword heuristic matched on seed 83029801",
+        "matched_kb_docs": [
+          {
+            "doc_path": "troubleshooting/authentication-sso.md",
+            "section": "New Users Cannot Authenticate via SSO",
+            "snippet": "## New Users Cannot Authenticate via SSO\n\n**Symptom:** Existing users log in fine; new joiners get an error.\n\n**Most common cause:** The new user's IDP group has not been mapped to a product role.\n\n**Resolution:**\n1. Log in to the product as an admin.\n2. Navigate to Settings \u2192 SSO \u2192 Group Mapping.\n3",
+            "relevance_score": 0.208
+          },
+          {
+            "doc_path": "onboarding/onboarding-guide.md",
+            "section": "Onboarding Guide \u2014 New Customers & Users",
+            "snippet": "# Onboarding Guide \u2014 New Customers & Users",
+            "relevance_score": 0.141
+          },
+          {
+            "doc_path": "products/securevault.md",
+            "section": "Common Support Scenarios",
+            "snippet": "## Common Support Scenarios\n\n### Users cannot log in after SSO migration\n\n1. Verify ACS URL and Entity ID are correct in the IDP.\n2. Check for clock skew: `SAML_ASSERTION_EXPIRED` in audit logs.\n3. Confirm group mappings exist for all IDP groups users belong to.\n4. Temporarily allow password login f",
+            "relevance_score": 0.111
+          }
+        ],
+        "recommended_team": "Tier-2 Engineering",
+        "draft_response": "Hi, thanks for reaching out about \"New employees can't log in via Okta SSO\". We've logged this as a Bug issue and are looking into it.",
+        "confidence": 0.55,
+        "low_confidence_flag": true
+      }
+    },
+    {
+      "case_id": "t1_case_5_llm_judge_response_quality",
+      "note": "",
+      "score": 1.0,
+      "pass": true,
+      "checks": [
+        {
+          "check": {
+            "llm_judge": "Does the draft_response directly acknowledge the customer's specific problem (dashboard timeout) rather than a generic acknowledgement? Answer strictly YES or NO."
+          },
+          "passed": true
+        }
+      ],
+      "output": {
+        "ticket_id": "TEST-5",
+        "product_area": "AnalyticsHub dashboard times out",
+        "category": "Performance",
+        "urgency": "P2",
+        "urgency_reasoning": "[offline mock] keyword heuristic matched on seed 14985608",
+        "matched_kb_docs": [
+          {
+            "doc_path": "troubleshooting/performance-and-integrations.md",
+            "section": "AnalyticsHub: Dashboard Timeout",
+            "snippet": "## AnalyticsHub: Dashboard Timeout\n\n**Symptom:** Dashboard fails to load; spinner runs indefinitely or \"Query timed out\" appears.\n\n**Resolution:**\n1. Edit the slowest widget and open the Query Profiler.\n2. Look for full-table scans (no `WHERE` clause or no index hit).\n3. Add a date filter: even `WHE",
+            "relevance_score": 0.154
+          },
+          {
+            "doc_path": "products/analyticshub.md",
+            "section": "AnalyticsHub \u2014 Product Reference",
+            "snippet": "# AnalyticsHub \u2014 Product Reference",
+            "relevance_score": 0.119
+          },
+          {
+            "doc_path": "products/analyticshub.md",
+            "section": "Common Support Scenarios",
+            "snippet": "## Common Support Scenarios\n\n### Dashboard loads slowly or times out\n\n1. Open the Query Profiler: Dashboard \u2192 [widget] \u2192 Edit \u2192 Profiler.\n2. Look for full-table scans or missing indexes on the source database.\n3. Add date range filters to limit the data window.\n4. Enable caching for the data source:",
+            "relevance_score": 0.097
+          }
+        ],
+        "recommended_team": "Tier-2 Engineering (Performance)",
+        "draft_response": "Hi, thanks for reaching out about \"AnalyticsHub dashboard times out\". We've logged this as a Performance issue and are looking into it.",
+        "confidence": 0.55,
+        "low_confidence_flag": true
+      }
+    },
+    {
+      "case_id": "t1_case_6_adversarial_ambiguous_ticket",
+      "note": "Adversarial: near-content-free ticket. Tests whether the system flags low confidence instead of fabricating a confident answer.",
+      "score": 1.0,
+      "pass": true,
+      "checks": [
+        {
+          "check": {
+            "field": "low_confidence_flag",
+            "op": "==",
+            "value": true
+          },
+          "passed": true
+        }
+      ],
+      "output": {
+        "ticket_id": "TEST-6-ADVERSARIAL",
+        "product_area": "not working",
+        "category": "Bug",
+        "urgency": "P2",
+        "urgency_reasoning": "[offline mock] keyword heuristic matched on seed 94157216",
+        "matched_kb_docs": [
+          {
+            "doc_path": "troubleshooting/performance-and-integrations.md",
+            "section": "Common Integration Errors",
+            "snippet": "## Common Integration Errors\n\n| Error | Integration | Cause | Fix |\n|-------|------------|-------|-----|\n| `403 Forbidden` | Salesforce | OAuth token lacks `api` scope | Regenerate token with correct scopes |\n| `404 Not Found` on valid endpoint | Any REST | API version mismatch | Confirm API version",
+            "relevance_score": 0.07
+          },
+          {
+            "doc_path": "onboarding/onboarding-guide.md",
+            "section": "Bulk User Provisioning FAQ",
+            "snippet": "## Bulk User Provisioning FAQ\n\n**Q: How many users can I import at once?**  \nA: CSV import supports up to 500 users per file. For larger imports, use SCIM or split into multiple CSVs.\n\n**Q: What if an invited user doesn't receive the invitation email?**  \nA: Check spam folders. If not found, resend ",
+            "relevance_score": 0.067
+          }
+        ],
+        "recommended_team": "Tier-2 Engineering",
+        "draft_response": "Hi, thanks for reaching out about \"not working\". We've logged this as a Bug issue and are looking into it.",
+        "confidence": 0.55,
+        "low_confidence_flag": true
+      }
+    }
+  ],
+  "task2_results": [
+    {
+      "case_id": "t2_case_1_known_account_has_output",
+      "note": "",
+      "score": 1.0,
+      "pass": true,
+      "checks": [
+        {
+          "check": {
+            "field": "executive_summary",
+            "op": "min_len",
+            "value": 20
+          },
+          "passed": true
+        },
+        {
+          "check": {
+            "field": "health_status",
+            "op": "not_empty"
+          },
+          "passed": true
+        }
+      ],
+      "output": {
+        "account_id": "ACC-3336",
+        "company": "Omni Consumer Products",
+        "executive_summary": "Omni Consumer Products is on the Business plan with At Risk health and a inactive usage trend. There are 7 open tickets and 2 flagged risk signal(s) in the last 90 days. Renewal is due 2026-08-19.",
+        "risk_flags": [
+          {
+            "ticket_id": "ACCOUNT_FIELD:usage_trend",
+            "quote": "usage_trend = Inactive",
+            "reason": "Declining or inactive usage is a leading indicator of disengagement.",
+            "severity": "high"
+          },
+          {
+            "ticket_id": "ESCALATION_NOTE",
+            "quote": "Decision maker considering competing vendor evaluation",
+            "reason": "Escalation note indicates a churn or relationship-risk signal.",
+            "severity": "high"
+          }
+        ],
+        "talking_points": [
+          "Review the 2 flagged risk signal(s) below before the call.",
+          "Confirm active usage (1693/1845 seats) aligns with renewal expectations.",
+          "Renewal date is 2026-08-19 \u2014 confirm timeline for next steps."
+        ],
+        "health_status": "At Risk",
+        "generated_deterministically": true
+      },
+      "account_id_used": "ACC-3336"
+    },
+    {
+      "case_id": "t2_case_2_risk_flags_have_quotes",
+      "note": "",
+      "score": 1.0,
+      "pass": true,
+      "checks": [
+        {
+          "check": {
+            "field": "risk_flags_all_have_quotes",
+            "op": "==",
+            "value": true
+          },
+          "passed": true
+        }
+      ],
+      "output": {
+        "account_id": "ACC-3336",
+        "company": "Omni Consumer Products",
+        "executive_summary": "Omni Consumer Products is on the Business plan with At Risk health and a inactive usage trend. There are 7 open tickets and 2 flagged risk signal(s) in the last 90 days. Renewal is due 2026-08-19.",
+        "risk_flags": [
+          {
+            "ticket_id": "ACCOUNT_FIELD:usage_trend",
+            "quote": "usage_trend = Inactive",
+            "reason": "Declining or inactive usage is a leading indicator of disengagement.",
+            "severity": "high"
+          },
+          {
+            "ticket_id": "ESCALATION_NOTE",
+            "quote": "Decision maker considering competing vendor evaluation",
+            "reason": "Escalation note indicates a churn or relationship-risk signal.",
+            "severity": "high"
+          }
+        ],
+        "talking_points": [
+          "Review the 2 flagged risk signal(s) below before the call.",
+          "Confirm active usage (1693/1845 seats) aligns with renewal expectations.",
+          "Renewal date is 2026-08-19 \u2014 confirm timeline for next steps."
+        ],
+        "health_status": "At Risk",
+        "generated_deterministically": true
+      },
+      "account_id_used": "ACC-3336"
+    },
+    {
+      "case_id": "t2_case_3_determinism",
+      "note": "",
+      "score": 1.0,
+      "pass": true,
+      "checks": [
+        {
+          "check": {
+            "field": "deterministic_repeat",
+            "op": "==",
+            "value": true
+          },
+          "passed": true
+        }
+      ],
+      "output": {
+        "account_id": "ACC-3336",
+        "company": "Omni Consumer Products",
+        "executive_summary": "Omni Consumer Products is on the Business plan with At Risk health and a inactive usage trend. There are 7 open tickets and 2 flagged risk signal(s) in the last 90 days. Renewal is due 2026-08-19.",
+        "risk_flags": [
+          {
+            "ticket_id": "ACCOUNT_FIELD:usage_trend",
+            "quote": "usage_trend = Inactive",
+            "reason": "Declining or inactive usage is a leading indicator of disengagement.",
+            "severity": "high"
+          },
+          {
+            "ticket_id": "ESCALATION_NOTE",
+            "quote": "Decision maker considering competing vendor evaluation",
+            "reason": "Escalation note indicates a churn or relationship-risk signal.",
+            "severity": "high"
+          }
+        ],
+        "talking_points": [
+          "Review the 2 flagged risk signal(s) below before the call.",
+          "Confirm active usage (1693/1845 seats) aligns with renewal expectations.",
+          "Renewal date is 2026-08-19 \u2014 confirm timeline for next steps."
+        ],
+        "health_status": "At Risk",
+        "generated_deterministically": true
+      },
+      "account_id_used": "ACC-3336"
+    },
+    {
+      "case_id": "t2_case_4_at_risk_account_flagged",
+      "note": "",
+      "score": 1.0,
+      "pass": true,
+      "checks": [
+        {
+          "check": {
+            "field": "risk_flags",
+            "op": "min_len",
+            "value": 1
+          },
+          "passed": true
+        }
+      ],
+      "output": {
+        "account_id": "ACC-3336",
+        "company": "Omni Consumer Products",
+        "executive_summary": "Omni Consumer Products is on the Business plan with At Risk health and a inactive usage trend. There are 7 open tickets and 2 flagged risk signal(s) in the last 90 days. Renewal is due 2026-08-19.",
+        "risk_flags": [
+          {
+            "ticket_id": "ACCOUNT_FIELD:usage_trend",
+            "quote": "usage_trend = Inactive",
+            "reason": "Declining or inactive usage is a leading indicator of disengagement.",
+            "severity": "high"
+          },
+          {
+            "ticket_id": "ESCALATION_NOTE",
+            "quote": "Decision maker considering competing vendor evaluation",
+            "reason": "Escalation note indicates a churn or relationship-risk signal.",
+            "severity": "high"
+          }
+        ],
+        "talking_points": [
+          "Review the 2 flagged risk signal(s) below before the call.",
+          "Confirm active usage (1693/1845 seats) aligns with renewal expectations.",
+          "Renewal date is 2026-08-19 \u2014 confirm timeline for next steps."
+        ],
+        "health_status": "At Risk",
+        "generated_deterministically": true
+      },
+      "account_id_used": "ACC-3336"
+    },
+    {
+      "case_id": "t2_case_5_llm_judge_summary_grounded",
+      "note": "",
+      "score": 1.0,
+      "pass": true,
+      "checks": [
+        {
+          "check": {
+            "llm_judge": "Does the executive_summary avoid inventing any fact (numbers, names, dates) that isn't plausible given a B2B SaaS account brief? Answer strictly YES or NO."
+          },
+          "passed": true
+        }
+      ],
+      "output": {
+        "account_id": "ACC-3336",
+        "company": "Omni Consumer Products",
+        "executive_summary": "Omni Consumer Products is on the Business plan with At Risk health and a inactive usage trend. There are 7 open tickets and 2 flagged risk signal(s) in the last 90 days. Renewal is due 2026-08-19.",
+        "risk_flags": [
+          {
+            "ticket_id": "ACCOUNT_FIELD:usage_trend",
+            "quote": "usage_trend = Inactive",
+            "reason": "Declining or inactive usage is a leading indicator of disengagement.",
+            "severity": "high"
+          },
+          {
+            "ticket_id": "ESCALATION_NOTE",
+            "quote": "Decision maker considering competing vendor evaluation",
+            "reason": "Escalation note indicates a churn or relationship-risk signal.",
+            "severity": "high"
+          }
+        ],
+        "talking_points": [
+          "Review the 2 flagged risk signal(s) below before the call.",
+          "Confirm active usage (1693/1845 seats) aligns with renewal expectations.",
+          "Renewal date is 2026-08-19 \u2014 confirm timeline for next steps."
+        ],
+        "health_status": "At Risk",
+        "generated_deterministically": true
+      },
+      "account_id_used": "ACC-3336"
+    },
+    {
+      "case_id": "t2_case_6_adversarial_missing_account",
+      "note": "Adversarial: unknown account_id (simulates the tickets.json / accounts.json ID mismatch called out in DATA_SCHEMA.md). Tests graceful, explicit failure rather than a silent wrong answer.",
+      "score": 1.0,
+      "pass": true,
+      "checks": [
+        {
+          "check": {
+            "field": "raises_error",
+            "op": "==",
+            "value": true
+          },
+          "passed": true
+        }
+      ],
+      "output": {},
+      "account_id_used": "ACC-DOES-NOT-EXIST"
+    }
+  ]
+}
